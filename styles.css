@@ -76,6 +76,7 @@ h6 {
     --light-white: #F7F7F7 ;
     --dark-white: #EFEFEF ;
     --highlight: #B4656F;
+    --highlight-soft: #D6AEB3;
 }
 
 .icon {
@@ -222,4 +223,54 @@ h6 {
 
 .cards {
     background-color: var(--dark-white);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.projects {
+    padding: 2rem;
+    & h2 {
+        margin-bottom: 1rem;
+    }
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    height: ;
+}
+
+.card {
+    position: relative;
+    border-radius: 15px;
+    padding: 1.5rem 1rem;
+    background-color: var(--light-white);
+    /* border-left: 5px solid var(--highlight-soft); */
+    & h1 {
+        font-size: 24px;
+        margin-bottom: 0.5rem;
+    }
+    & .icon {
+        filter: brightness(0%) saturate(100%);
+    }
+}
+
+.card::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 8px;
+    height: 100%;
+    background-color: var(--highlight-soft);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.icons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
 }
